@@ -1,0 +1,312 @@
+// Kathai flavour concepts and descriptions follow the product direction brief.
+
+export type Collection = 'KLASSICS' | 'MOOD MELT' | 'MACROMELT'
+
+export interface Flavor {
+  id: string
+  name: string
+  accent: string // deep base colour (tin body / gradient end)
+  accent2: string // highlight colour (lid / gradient start / "K" glyph)
+  badge?: string // optional highlight chip
+
+  collection: Collection
+  composition: string[] // e.g. ['Chocolate', 'Lemon', 'Coconut']
+  description: string
+  notes: string[] // 3 punchy tasting descriptors
+  intensity: number // 1–5 (Chocolate Intensity)
+  sweetness: number // 1–5
+  adventure: number // 1–5 (Adventure Level)
+  body: string // 'Silky' | 'Velvety' | 'Rich' | 'Smooth' | 'Bold' | 'Thick + Creamy'
+  haveIt: string // 'With Milk / Black' etc.
+  bestMoment: string // 'Morning / Afternoon' etc.
+  serveIt: string // 'Hot / Iced'
+  keyword: string // 'Balance' | 'Ritual' etc.
+  vibe: string // 'Golden hour in a cup.'
+  tags: string[] // Product Tags from the doc
+  heat?: number // 1–3 (Picante only)
+}
+
+export const FLAVORS: Flavor[] = [
+  // ---------------- KLASSICS ----------------
+  {
+    id: 'klassic-milk',
+    name: 'Milk Chocolate',
+    accent: '#6B4A2F',
+    accent2: '#D9A86A',
+    collection: 'KLASSICS',
+    composition: ['Chocolate', 'Milk'],
+    description:
+      'The comforting classic. Smooth, rounded milk chocolate — the flavour you reach for when you just want things to feel familiar and warm.',
+    notes: ['Smooth', 'Creamy', 'Familiar'],
+    intensity: 2,
+    sweetness: 4,
+    adventure: 1,
+    body: 'Creamy',
+    haveIt: 'With Milk',
+    bestMoment: 'Anytime',
+    serveIt: 'Hot / Iced',
+    keyword: 'Comfort',
+    vibe: 'The reliable hug.',
+    tags: ['Milk Chocolate', 'Classic', 'Comfort', 'Crowd Favourite'],
+  },
+  {
+    id: 'klassic-dark',
+    name: 'Dark Chocolate',
+    accent: '#2E211D',
+    accent2: '#B2674A',
+    collection: 'KLASSICS',
+    composition: ['Dark Chocolate'],
+    description:
+      'For those who like it deep. Intense, bittersweet dark chocolate with a slow, lingering finish.',
+    notes: ['Intense', 'Bittersweet', 'Deep'],
+    intensity: 5,
+    sweetness: 2,
+    adventure: 2,
+    body: 'Rich',
+    haveIt: 'With Milk / Black',
+    bestMoment: 'Evening',
+    serveIt: 'Hot / Iced',
+    keyword: 'Depth',
+    vibe: 'The quiet classic.',
+    tags: ['Dark Chocolate', 'Intense', 'Classic'],
+  },
+  {
+    id: 'klassic-white',
+    name: 'White Chocolate',
+    accent: '#C9A86A',
+    accent2: '#F5E6C8',
+    collection: 'KLASSICS',
+    composition: ['White Chocolate'],
+    description:
+      'Soft, sweet and ivory-smooth. A gentle cup for the moments that ask for something light.',
+    notes: ['Sweet', 'Buttery', 'Light'],
+    intensity: 1,
+    sweetness: 5,
+    adventure: 1,
+    body: 'Smooth',
+    haveIt: 'With Milk',
+    bestMoment: 'Afternoon',
+    serveIt: 'Hot / Iced',
+    keyword: 'Gentle',
+    vibe: 'The soft one.',
+    tags: ['White Chocolate', 'Sweet', 'Light'],
+  },
+  {
+    id: 'klassic-vanilla',
+    name: 'Madagascar Vanilla',
+    accent: '#7A5648',
+    accent2: '#F2E2B8',
+    collection: 'KLASSICS',
+    composition: ['Chocolate', 'Vanilla'],
+    description:
+      'Chocolate met with the warm, floral sweetness of vanilla. Familiar, but never plain.',
+    notes: ['Vanilla', 'Floral', 'Warm'],
+    intensity: 2,
+    sweetness: 4,
+    adventure: 1,
+    body: 'Smooth',
+    haveIt: 'With Milk',
+    bestMoment: 'Evening',
+    serveIt: 'Hot / Iced',
+    keyword: 'Warmth',
+    vibe: 'The familiar glow.',
+    tags: ['Vanilla', 'Floral', 'Comfort'],
+  },
+  {
+    id: 'klassic-hazelnut',
+    name: 'Hazelnut Praline',
+    accent: '#6B4A2F',
+    accent2: '#E8C766',
+    collection: 'KLASSICS',
+    composition: ['Chocolate', 'Hazelnut'],
+    description:
+      'Toasted hazelnut folded into smooth chocolate — nutty, rounded and quietly indulgent.',
+    notes: ['Hazelnut', 'Toasted', 'Nutty'],
+    intensity: 3,
+    sweetness: 4,
+    adventure: 2,
+    body: 'Velvety',
+    haveIt: 'With Milk',
+    bestMoment: 'Afternoon / Dessert',
+    serveIt: 'Hot / Iced',
+    keyword: 'Indulgence',
+    vibe: 'The treat.',
+    tags: ['Hazelnut', 'Nutty', 'Dessert-Inspired'],
+  },
+
+  // ---------------- MOOD MELT ----------------
+  {
+    id: 'sole',
+    name: 'Solé',
+    accent: '#4A3528',
+    accent2: '#F2D86A',
+    badge: 'Unexpected',
+    collection: 'MOOD MELT',
+    composition: ['Chocolate', 'Lemon', 'Coconut'],
+    description:
+      'Dark chocolate, luminous lemon and silken coconut. Deep cocoa first, then a bright citrus lift, melting into a soft coconut finish.',
+    notes: ['Bright', 'Citrusy', 'Tropical'],
+    intensity: 3,
+    sweetness: 3,
+    adventure: 4,
+    body: 'Silky',
+    haveIt: 'With Milk / Black',
+    bestMoment: 'Morning / Afternoon',
+    serveIt: 'Hot / Iced',
+    keyword: 'Balance',
+    vibe: 'Golden hour in a cup.',
+    tags: ['Bright', 'Citrusy', 'Tropical', 'Light Indulgence', 'Unexpected Pairing', 'Coconut', 'Lemon'],
+  },
+  {
+    id: 'moss',
+    name: 'Moss',
+    accent: '#3A4A2E',
+    accent2: '#9DBE6A',
+    collection: 'MOOD MELT',
+    composition: ['Chocolate', 'Matcha'],
+    description:
+      "Dark chocolate meets the earthy, slightly bitter edge of matcha. Chocolatey first, then matcha's grassy depth, finishing smooth and mellow.",
+    notes: ['Earthy', 'Creamy', 'Calm'],
+    intensity: 3,
+    sweetness: 2,
+    adventure: 4,
+    body: 'Velvety',
+    haveIt: 'With Milk / Black',
+    bestMoment: 'Morning / Slow Afternoon',
+    serveIt: 'Hot / Iced',
+    keyword: 'Ritual',
+    vibe: 'Quiet luxury. Literally.',
+    tags: ['Earthy', 'Matcha', 'Tea-Inspired', 'Ritual', 'Calm', 'Low Sweetness'],
+  },
+  {
+    id: 'salora',
+    name: 'Salora',
+    accent: '#5A3E33',
+    accent2: '#E8C766',
+    badge: 'Crowd Favourite',
+    collection: 'MOOD MELT',
+    composition: ['Chocolate', 'Caramel', 'Sea Salt'],
+    description:
+      'Chocolate and caramel bring the indulgence; a touch of sea salt cuts the sweetness and keeps you coming back. Familiar enough to return to, interesting enough to never bore.',
+    notes: ['Sweet', 'Salty', 'Smooth'],
+    intensity: 4,
+    sweetness: 4,
+    adventure: 2,
+    body: 'Rich + Velvety',
+    haveIt: 'With Milk / Black',
+    bestMoment: 'Anytime / Dessert',
+    serveIt: 'Hot / Iced',
+    keyword: 'Harmony',
+    vibe: 'Comfort food got dressed up.',
+    tags: ['Sweet + Salty', 'Caramel', 'Sea Salt', 'Comfort', 'Dessert-Inspired', 'Crowd Favourite'],
+  },
+  {
+    id: 'red-noir',
+    name: 'Red Noir',
+    accent: '#3A1A1A',
+    accent2: '#D44A5A',
+    collection: 'MOOD MELT',
+    composition: ['Dark Chocolate', 'Strawberry'],
+    description:
+      'Bold dark chocolate meets juicy strawberry — rich and fruit-forward, balancing intensity with a little flirtation.',
+    notes: ['Dark', 'Fruity', 'Decadent'],
+    intensity: 5,
+    sweetness: 3,
+    adventure: 3,
+    body: 'Rich',
+    haveIt: 'With Milk / Black',
+    bestMoment: 'Evening / Dessert',
+    serveIt: 'Hot / Iced',
+    keyword: 'Contrast',
+    vibe: 'Date night, even if the date is Netflix.',
+    tags: ['Dark Chocolate', 'Strawberry', 'Berry', 'Decadent', 'Dessert', 'Date Night'],
+  },
+  {
+    id: 'midnight-sun',
+    name: 'Midnight Sun',
+    accent: '#4A2E1A',
+    accent2: '#E89B3C',
+    collection: 'MOOD MELT',
+    composition: ['Chocolate', 'Orange Zest'],
+    description:
+      'Aromatic orange zest meets deep chocolate. Fresh citrus lands first, followed by rich cocoa and a lingering bittersweet finish.',
+    notes: ['Dark', 'Citrusy', 'Aromatic'],
+    intensity: 4,
+    sweetness: 2,
+    adventure: 3,
+    body: 'Smooth',
+    haveIt: 'With Milk / Black',
+    bestMoment: 'Afternoon / Evening',
+    serveIt: 'Hot',
+    keyword: 'Radiance',
+    vibe: 'Bright flavour. Dark intentions.',
+    tags: ['Citrus', 'Orange', 'Aromatic', 'Bittersweet', 'Chocolate Orange', 'After Dark'],
+  },
+  {
+    id: 'rush-e',
+    name: 'Rush-E',
+    accent: '#2E211D',
+    accent2: '#C59B27',
+    collection: 'MOOD MELT',
+    composition: ['Dark Chocolate', 'Espresso', 'Cardamom'],
+    description:
+      'Dark chocolate and espresso hit first; cardamom follows with aromatic warmth, keeping it from being just another mocha. Built for deadlines, study nights and mornings that need more than awake.',
+    notes: ['Bold', 'Roasty', 'Spiced'],
+    intensity: 5,
+    sweetness: 2,
+    adventure: 3,
+    body: 'Bold',
+    haveIt: 'With Milk / Black',
+    bestMoment: 'Morning / Work / Study',
+    serveIt: 'Hot / Iced',
+    keyword: 'Momentum',
+    vibe: 'Lock in.',
+    tags: ['Espresso', 'Cardamom', 'Bold', 'Work Mode', 'Café-Inspired', 'Dark Chocolate'],
+  },
+  {
+    id: 'picante',
+    name: 'Picante',
+    accent: '#4A2418',
+    accent2: '#D4592A',
+    badge: 'Adventurous',
+    collection: 'MOOD MELT',
+    composition: ['Chocolate', 'Chilli'],
+    description:
+      'Velvety chocolate comes in smooth and rich; then the chilli slowly turns up the heat. Not a slap — more a slow, warm burn that builds with every sip.',
+    notes: ['Rich', 'Warm', 'Slow-burning'],
+    intensity: 4,
+    sweetness: 3,
+    adventure: 5,
+    body: 'Rich',
+    haveIt: 'With Milk / Black',
+    bestMoment: 'Evening',
+    serveIt: 'Hot',
+    keyword: 'Ember',
+    vibe: 'Choose violence. Politely.',
+    tags: ['Spicy', 'Chilli', 'Slow Burn', 'Adventurous', 'Bold', 'Warming', 'After Dark'],
+    heat: 3,
+  },
+
+  // ---------------- MACROMELT ----------------
+  {
+    id: 'macro-melt',
+    name: 'Macro Melt',
+    accent: '#4A3528',
+    accent2: '#C9A86A',
+    collection: 'MACROMELT',
+    composition: ['Chocolate', 'Protein blend concept'],
+    description:
+      'A chocolate-led concept for an active routine. Final formulation and nutrition details are still being confirmed.',
+    notes: ['Chocolatey', 'Creamy', 'In development'],
+    intensity: 4,
+    sweetness: 3,
+    adventure: 2,
+    body: 'Thick + Creamy',
+    haveIt: 'With Milk / Water',
+    bestMoment: 'Post-Workout / Snack',
+    serveIt: 'Hot / Iced',
+    keyword: 'Performance',
+    vibe: 'Gains but make them chocolate.',
+    tags: ['Active Lifestyle', 'Chocolate'],
+  },
+]
